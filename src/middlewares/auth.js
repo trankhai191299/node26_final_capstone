@@ -3,7 +3,7 @@
 const jwt = require('jsonwebtoken');
 const { AppError } = require("../helpers/error");
 const {User} = require('../models');
-const configs = require('../config');
+const configs = require('../configs');
 
 const extractTokenfromHeader = (headers) =>{
     const bearerToken = headers.authorization; // Bearer asdascljcoxc210eq

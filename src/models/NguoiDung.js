@@ -43,7 +43,12 @@ module.exports = (sequelize)=>{
                 type:DataTypes.STRING,
             },
             birthday:{
-                type:DataTypes.DATEONLY
+                type:DataTypes.DATEONLY,
+                validate:{
+                    isDate:{
+                        msg:"undefined birthday"
+                    }
+                }
             },
             gender:{
                 type:DataTypes.ENUM('true','false'),
@@ -54,17 +59,14 @@ module.exports = (sequelize)=>{
                 defaultValue:'USER'
             },
             skill:{
-                type:DataTypes.ARRAY(DataTypes.STRING)
+                type:DataTypes.STRING
             },
             certification:{
-                type:DataTypes.ARRAY(DataTypes.STRING)
+                type:DataTypes.STRING
             },
             avatar:{
                 type:DataTypes.STRING
             },
-            bookingJob:{
-                type:DataTypes.ARRAY(DataTypes.STRING)
-            }
         },{
             tableName:"nguoi_dung",
             timestamps:false,

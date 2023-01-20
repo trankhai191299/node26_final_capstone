@@ -43,11 +43,13 @@ module.exports = (sequelize) =>{
             },
             maChiTietLoai:{
                 type:DataTypes.INTEGER,
-                field:"ma_chi_tiet_loai"
+                field:"ma_chi_tiet_loai",
+                allowNull:false
             },
             nguoiTao:{
                 type:DataTypes.STRING,
-                field:"nguoi_tao"
+                field:"nguoi_tao",
+                allowNull:false
             }
 
         },{
