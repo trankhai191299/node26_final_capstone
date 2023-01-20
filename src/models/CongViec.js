@@ -47,7 +47,7 @@ module.exports = (sequelize) =>{
                 allowNull:false
             },
             nguoiTao:{
-                type:DataTypes.STRING,
+                type:DataTypes.INTEGER,
                 field:"nguoi_tao",
                 allowNull:false
             }
