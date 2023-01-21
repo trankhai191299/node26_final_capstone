@@ -1,4 +1,4 @@
-const {NguoiDung} = require('../models');
+const {NguoiDung, sequelize} = require('../models');
 const {AppError} = require('../helpers/error');
 
 const getAllNgDung = async() =>{
@@ -59,10 +59,46 @@ const getNgDungbyId = async(userId)=>{
         throw error
     }
 }
-
+const updateNgDung = async(requestId,updateData)=>{
+    try {
+        const requester = await NguoiDung.findOne({
+            where:{
+                id:requestId
+            }
+        })
+        if (!requester) {
+            throw new AppError(404,'user not found')
+        }
+        await requester.set(updateData)
+        return requester
+    } catch (error) {
+        throw error
+    }
+}
+const searchNgDung = async(keyword)=>{
+    try {
+        const users = await NguoiDung.findAll({
+            where:{
+                name:sequelize.where(
+                    sequelize.fn("LOWER",sequelize.col("name")),
+                    "LIKE",
+                    "%" + keyword + "%"
+                )
+            }
+        })
+        if(users.length === 0){
+            return "no search found"
+        }
+        return users
+    } catch (error) {
+        throw error
+    }
+}
 module.exports = {
     getAllNgDung,
     createNgDung,
     deleteNgDung,
     getNgDungbyId,
+    updateNgDung,
+    searchNgDung
 }

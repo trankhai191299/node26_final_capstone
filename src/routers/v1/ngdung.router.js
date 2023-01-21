@@ -7,4 +7,7 @@ ngDungRouter.get('/',ngDungController.getAllNgDung())
 ngDungRouter.post('/',ngDungController.createNgDung())
 ngDungRouter.delete('/',ngDungController.deleteNgDung())
 ngDungRouter.get('/:id',ngDungController.getNgDungbyId())
+ngDungRouter.put('/:id',ngDungController.updateNgDung())
+ngDungRouter.get('/search/:keyword',ngDungController.searchNgDung())
+
 module.exports = ngDungRouter

@@ -45,9 +45,34 @@ const getNgDungbyId = () =>{
         }
     }
 }
+const updateNgDung = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {id} = req.params
+            const data = req.body
+            const updatedUser = await ngDungService.updateNgDung(id,data)
+            res.status(200).json(response(updatedUser))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
+const searchNgDung = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {keyword} = req.params
+            const listUser = await ngDungService.searchNgDung(keyword)
+            res.status(200).json(response(listUser))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllNgDung,
     createNgDung,
     deleteNgDung,
     getNgDungbyId,
+    updateNgDung,
+    searchNgDung,
 }

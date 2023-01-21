@@ -5,7 +5,7 @@ const upload = require('../../middlewares/upload');
 const authRouter = require('./auth.router')
 const ngDungRouter = require('./ngdung.router')
 const v1 = express.Router()
-
+//---------hoangkhai----------//
 //auth
 v1.use('/auth',authRouter)
 //----------//
