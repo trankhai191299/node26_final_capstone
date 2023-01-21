@@ -11,7 +11,9 @@ app.use(express.static('.'));
 sequelize.sync({ alter: true });
 
 const v1 = require('./routers/v1');
+const v2 = require('./routers/v2');
 app.use('/fivernew/v1',v1);
+app.use('/fivernew/v2',v2);
 
 app.use(handleErrors);
 
