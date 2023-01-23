@@ -44,4 +44,6 @@ module.exports = {
     CongViec,
     ChiTietLoaiCongViec,
     LoaiCongViec,
+    BinhLuan,
+    ThueCongViec
 }
