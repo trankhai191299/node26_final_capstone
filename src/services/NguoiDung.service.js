@@ -59,19 +59,23 @@ const getNgDungbyId = async(userId)=>{
         throw error
     }
 }
-const updateNgDung = async(requestId,updateData)=>{
+const updateNgDung = async(request,updateData)=>{
     try {
         const requester = await NguoiDung.findOne({
             where:{
-                id:requestId
+                id:request.id
             }
         })
         if (!requester) {
             throw new AppError(404,'user not found')
         }
+        if(request.id !== updateData.id){
+            throw new AppError(403,'no permission')
+        }
         await requester.set(updateData)
         return requester
     } catch (error) {
+        console.log(error);
         throw error
     }
 }

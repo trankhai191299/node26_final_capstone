@@ -48,11 +48,12 @@ const getNgDungbyId = () =>{
 const updateNgDung = () =>{
     return async(req,res,next)=>{
         try {
-            const {id} = req.params
+            const {user} = res.locals
             const data = req.body
-            const updatedUser = await ngDungService.updateNgDung(id,data)
+            const updatedUser = await ngDungService.updateNgDung(user,data)
             res.status(200).json(response(updatedUser))
         } catch (error) {
+            console.log(error);
             next(error)
         }
     }

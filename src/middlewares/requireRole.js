@@ -6,7 +6,7 @@ const reqRole = (...roles) =>{
         const {user} = res.locals;
         const isMatched = roles.includes(user.role);
         if(!isMatched){
-            next(new AppError(403,"No have permission"));
+            next(new AppError(403,"No permission"));
             return;
         };
         next();

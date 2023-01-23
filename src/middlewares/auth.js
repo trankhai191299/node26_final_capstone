@@ -2,7 +2,7 @@
 
 const jwt = require('jsonwebtoken');
 const { AppError } = require("../helpers/error");
-const {User} = require('../models');
+const {NguoiDung} = require('../models');
 const configs = require('../configs');
 
 const extractTokenfromHeader = (headers) =>{
@@ -21,7 +21,7 @@ const authorization = async (req,res,next)=>{
         const payload = jwt.verify(token,configs.SECRET_KEY);
         // console.log(payload);
         // dùng token payload có chứa id của user ddeere lấy thông tin
-        const user = await User.findByPk(payload.id);
+        const user = await NguoiDung.findByPk(payload.id);
         if(!user){
             next(new AppError(401,"Invalid Token"));
         };
