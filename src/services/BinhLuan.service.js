@@ -79,16 +79,16 @@ const deleteBinhLuan = async(requester,cmtId)=>{
 }
 const getBinhLuanbyJobId = async(jobId) =>{
     try {
-        const job = await CongViec.findOne({
-            where:{
-                id:jobId
-            },
-        })
-        if(!job){
-            throw new AppError(404,'job not found')
+        let finalCmt = []
+        const listCmt = await BinhLuan.findAll()
+        jobId = parseInt(jobId)
+        for(const cmt of listCmt){
+            if(cmt.maCongViec === jobId){
+                finalCmt.push(cmt)
+            }
         }
+        return finalCmt
     } catch (error) {
-        console.log(error);
         throw error
     }
 }
