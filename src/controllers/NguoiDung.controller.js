@@ -69,6 +69,17 @@ const searchNgDung = () =>{
         }
     }
 }
+const paginate = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {page,size} = req.query
+            const listUser = await ngDungService.paginate(page,size)
+            res.status(200).json(response(listUser))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllNgDung,
     createNgDung,
@@ -76,4 +87,5 @@ module.exports = {
     getNgDungbyId,
     updateNgDung,
     searchNgDung,
+    paginate
 }

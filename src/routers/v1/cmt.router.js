@@ -2,7 +2,7 @@ const express = require('express')
 const cmtController = require('../../controllers/BinhLuan.controller')
 const cmtRouter = express.Router()
 
-// CRUD BinhLuan + get binh luan by cong vc
+// API binh luan
 cmtRouter.get('/',cmtController.getAllBinhLuan())
 cmtRouter.post('/',cmtController.createBinhLuan())
 cmtRouter.put('/',cmtController.updateBinhLuan())
