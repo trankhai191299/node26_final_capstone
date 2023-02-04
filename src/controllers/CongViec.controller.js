@@ -101,6 +101,17 @@ const searchCv = () =>{
         }
     }
 }
+const paginate = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {page,size} = req.query
+            const listJob = await jobService.paginate(page,size)
+            res.status(200).json(response(listJob))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllCv,
     createCv,
@@ -110,5 +121,6 @@ module.exports = {
     getMenuLoaiCv,
     getDetailsbyType,
     getCvbyDetail,
-    searchCv
+    searchCv,
+    paginate
 }

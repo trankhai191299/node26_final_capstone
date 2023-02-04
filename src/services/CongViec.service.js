@@ -177,6 +177,36 @@ const searchCv = async(keyword)=>{
         throw error
     }
 }
+const paginate = async(page,size)=>{
+    try {
+        const pageAsNum = Number.parseInt(page)
+        const sizeAsNum = Number.parseInt(size)
+        
+        let pageValue = 0
+        if(!Number.isNaN(pageAsNum) && pageAsNum>0){
+            pageValue = pageAsNum
+        }else if(Number.isNaN(pageAsNum)){
+            throw new AppError(400,'bad request')
+        }
+        let sizeValue = 10
+        if(!Number.isNaN(sizeAsNum)&&sizeAsNum>0&&sizeAsNum<10){
+            sizeValue = sizeAsNum
+        }else if(Number.isNaN(sizeAsNum)){
+            throw new AppError(400,'bad request')
+        }
+
+        const jobs = await CongViec.findAndCountAll({
+            offset:pageValue * sizeValue,
+            limit:sizeValue,
+        })
+        return ({
+            content:jobs.rows,
+            totalPages: Math.ceil(jobs.count / sizeValue)
+        })
+    } catch (error) {
+        throw error
+    }
+}
 module.exports = {
     getAllCv,
     createCv,
@@ -186,5 +216,6 @@ module.exports = {
     getMenuLoaiCv,
     getDetailsbyType,
     getCvbyDetail,
-    searchCv
+    searchCv,
+    paginate
 }

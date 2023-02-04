@@ -5,6 +5,7 @@ const congviecRouter = express.Router()
 // API cong viec
 congviecRouter.get('/',conviecController.getAllCv())
 congviecRouter.post('/',conviecController.createCv())
+congviecRouter.get('/phan-trang-tim-kiem',conviecController.paginate())
 congviecRouter.get('/lay-menu-loai-cong-viec',conviecController.getMenuLoaiCv())
 congviecRouter.get('/lay-chi-tiet-loai-cong-viec/:id',conviecController.getDetailsbyType())
 congviecRouter.get('/lay-cong-viec-theo-chi-tiet-loai/:id',conviecController.getCvbyDetail())
