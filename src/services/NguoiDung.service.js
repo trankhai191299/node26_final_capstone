@@ -129,7 +129,6 @@ const paginate = async(page,size)=>{
 } 
 const uploadImg = async(file,user)=>{
     try {
-        console.log(file);
         let link = `http://localhost:4000/${file.path}`
         const userFound = await NguoiDung.findOne({
             where:{

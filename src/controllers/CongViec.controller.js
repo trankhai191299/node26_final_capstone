@@ -112,6 +112,22 @@ const paginate = () =>{
         }
     }
 }
+const uploadImg = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {user} = res.locals
+            const {jobId} = req.params
+            const file = req.file
+            if(!file){
+                next(new AppError(400,'Missing file'));
+            };
+            const updatedJob = await jobService.uploadImg(file,user,jobId)
+            res.status(200).json(response(updatedJob))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllCv,
     createCv,
@@ -122,5 +138,6 @@ module.exports = {
     getDetailsbyType,
     getCvbyDetail,
     searchCv,
-    paginate
+    paginate,
+    uploadImg
 }

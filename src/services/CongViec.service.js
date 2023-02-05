@@ -207,6 +207,34 @@ const paginate = async(page,size)=>{
         throw error
     }
 }
+const uploadImg = async(file,requester,jobId) =>{
+    try {
+        let link = `http://localhost:4000/${file.path}`
+        const requesterFound = await NguoiDung.findOne({
+            where:{
+                id:requester.id
+            }
+        })
+        const jobFound = await CongViec.findOne({
+            where:{
+                id:jobId
+            }
+        })
+        if(!jobFound){
+            throw new AppError(404,'job not found')
+        }
+        if(jobFound.nguoiTao !== requesterFound.id){
+            throw new AppError(403,'no permission')
+        }
+        await jobFound.update({
+            hinhAnh: link
+        })
+        await jobFound.save()
+        return jobFound
+    } catch (error) {
+        throw error
+    }
+}
 module.exports = {
     getAllCv,
     createCv,
@@ -217,5 +245,6 @@ module.exports = {
     getDetailsbyType,
     getCvbyDetail,
     searchCv,
-    paginate
+    paginate,
+    uploadImg
 }
