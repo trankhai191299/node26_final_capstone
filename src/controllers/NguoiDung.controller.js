@@ -80,6 +80,21 @@ const paginate = () =>{
         }
     }
 }
+const uploadImg = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {user} = res.locals
+            const file = req.file
+            if(!file){
+                next(new AppError(400,'Missing file'));
+            };
+            const updatedUser = await ngDungService.uploadImg(file,user)
+            res.status(200).json(response(updatedUser))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllNgDung,
     createNgDung,
@@ -87,5 +102,6 @@ module.exports = {
     getNgDungbyId,
     updateNgDung,
     searchNgDung,
-    paginate
+    paginate,
+    uploadImg
 }

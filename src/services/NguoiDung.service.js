@@ -127,6 +127,24 @@ const paginate = async(page,size)=>{
         throw error
     }
 } 
+const uploadImg = async(file,user)=>{
+    try {
+        console.log(file);
+        let link = `http://localhost:4000/${file.path}`
+        const userFound = await NguoiDung.findOne({
+            where:{
+                id:user.id
+            }
+        })
+        await userFound.update({
+            avatar: link
+        })
+        await userFound.save()
+        return userFound
+    } catch (error) {
+        throw error
+    }
+}
 module.exports = {
     getAllNgDung,
     createNgDung,
@@ -134,5 +152,6 @@ module.exports = {
     getNgDungbyId,
     updateNgDung,
     searchNgDung,
-    paginate
+    paginate,
+    uploadImg
 }

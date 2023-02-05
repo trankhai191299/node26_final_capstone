@@ -1,6 +1,5 @@
 const express = require('express')
 const authorization = require('../../middlewares/auth');
-const upload = require('../../middlewares/upload');
 const authRouter = require('./auth.router');
 const cmtRouter = require('./cmt.router');
 const congviecRouter = require('./congviec.router');
