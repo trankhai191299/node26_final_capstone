@@ -3,6 +3,7 @@ const authorization = require('../../middlewares/auth');
 const authRouter = require('./auth.router');
 const cmtRouter = require('./cmt.router');
 const congviecRouter = require('./congviec.router');
+const jobTypeRouter = require('./jobtype.router');
 const ngDungRouter = require('./ngdung.router');
 const testRouter = require('./test.router');
 const v1 = express.Router()
@@ -18,6 +19,9 @@ v1.use('/binhluan',authorization,cmtRouter)
 //----------//
 //cong viec
 v1.use('/congviec',authorization,congviecRouter)
+//----------//
+//loai cong viec
+v1.use('/loai-cong-viec',authorization,jobTypeRouter)
 //----------//
 //test
 v1.use('/test',testRouter)

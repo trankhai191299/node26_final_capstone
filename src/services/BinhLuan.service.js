@@ -1,5 +1,5 @@
 const {AppError} = require('../helpers/error');
-const {BinhLuan, NguoiDung, CongViec} = require('../models')
+const {BinhLuan, NguoiDung} = require('../models')
 
 const getAllBinhLuan = async() =>{
     try {
