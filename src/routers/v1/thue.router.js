@@ -5,6 +5,7 @@ const hiredJobRouter = express.Router()
 //API thue cong viec
 hiredJobRouter.get('/',hiredJobController.getAllHiredJobs()) // get all thue cong viec
 hiredJobRouter.post('/',hiredJobController.createHiredJob()) // create thue cong viec
+hiredJobRouter.post('/hoan-thanh-cong-viec/:id',hiredJobController.hiredJobDone())
 hiredJobRouter.get('/phan-trang-tim-kiem',hiredJobController.paginate()) // phan trang
 hiredJobRouter.get('/:id',hiredJobController.getHiredJobbyId()) // get thue cong viec = id
 hiredJobRouter.put('/',hiredJobController.updateHiredJob()) // update thue cong viec

@@ -66,11 +66,23 @@ const paginate = () =>{
         }
     }
 }
+const hiredJobDone = () =>{
+    return async(req,res,next)=>{
+        try {
+            const {id} = req.params
+            const hiredJob = await thueCongViecService.hiredJobDone(id)
+            res.status(200).json(response(hiredJob))
+        } catch (error) {
+            next(error)
+        }
+    }
+}
 module.exports = {
     getAllHiredJobs,
     createHiredJob,
     getHiredJobbyId,
     updateHiredJob,
     deleteHiredJob,
-    paginate
+    paginate,
+    hiredJobDone
 }

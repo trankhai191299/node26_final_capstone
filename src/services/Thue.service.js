@@ -107,11 +107,36 @@ const paginate = async(page,size)=>{
         throw error
     }
 }
+const hiredJobDone = async(hiredId) =>{
+    try {
+        const hiredJob = await ThueCongViec.findOne({
+            where:{
+                id:hiredId
+            }
+        })
+        if(!hiredJob){
+            throw new AppError(404,'hired-job not existed')
+        }
+        if(hiredJob.hoanThanh){
+            return "Job has already done"
+        }else{
+            await hiredJob.update({
+                hoanThanh:1
+            })
+            await hiredJob.save()
+            return hiredJob
+        }
+        
+    } catch (error) {
+        throw error
+    }
+}
 module.exports = {
     getAllHires,
     createHiredJob,
     getHiredJobbyId,
     updateHiredJob,
     deleteHiredJob,
-    paginate
+    paginate,
+    hiredJobDone
 }
