@@ -1,0 +1,1527 @@
+{
+    "info": {
+        "name": "noder26_final",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "auth",
+            "item": [
+                {
+                    "name": "sign up",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/auth/signup",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "auth",
+                                "signup"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"name\": \"khai tran 3\",\n  \"email\": \"khaitran3@gmail.com\",\n  \"password\": \"1234\",\n  \"phone\": \"013456789\",\n  \"birthday\": \"1999-12-19\",\n  \"avatar\":\"abc.com\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "sign in",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/auth/signin",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "auth",
+                                "signin"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"email\": \"khaitran@gmail.com\",\n  \"password\": \"1234\"\n}"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "users",
+            "item": [
+                {
+                    "name": "get all user",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NjE2MTIyLCJleHAiOjE2NzU2NTkzMjJ9.ICgwzf5Wfghj4CcyabstR6sBX-No13rhMz6LIVm-72E",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "phan trang",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users/phan-trang-tim-kiem?page=0&size=2",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "2"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users",
+                                "phan-trang-tim-kiem"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTIyMjQ3LCJleHAiOjE2NzU1NjU0NDd9.O7F4i1wbiGgmhsawHCPDNgG7DxIHkjr9cJsaf4qby8A",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get user by id",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users/2",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users",
+                                "2"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTIyMjQ3LCJleHAiOjE2NzU1NjU0NDd9.O7F4i1wbiGgmhsawHCPDNgG7DxIHkjr9cJsaf4qby8A",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get search name",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users/search/1",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users",
+                                "search",
+                                "1"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDU3MzgsImV4cCI6MTY3NDU0ODkzOH0.klVFmigWLa4364jD3Y_fVx54flEg3z2wuP3zseSlULY",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "put update user",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n      \"id\": 1,\n      \"name\": \"khai tran1\",\n      \"email\": \"khaitran_1@gmail.com\",\n      \"phone\": \"013456787\",\n      \"birthday\": \"1999-10-19\",\n      \"gender\": \"true\",\n      \"role\": \"USER\",\n      \"skill\": null,\n      \"certification\": null,\n      \"avatar\": \"abc.com\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDU3MzgsImV4cCI6MTY3NDU0ODkzOH0.klVFmigWLa4364jD3Y_fVx54flEg3z2wuP3zseSlULY",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete user",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\":6\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDc0OTgsImV4cCI6MTY3NDU1MDY5OH0.IxurmXsTISqNxmcXvJYYLhTDRZ7z41K9y4gM3GJshAA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "post create user",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n      \"name\": \"khai tran 3\",\n      \"email\": \"khaitran3@gmail.com\",\n      \"password\":\"1234\",\n      \"phone\": \"013456789\",\n      \"birthday\": \"1999-12-19\",\n      \"gender\": \"true\",\n      \"avatar\": \"abc.com\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTk4Njg3LCJleHAiOjE2NzU2NDE4ODd9.IaYqAQdISiQr1C2dzgNaiRsfMZJ6j-HpjkQzIqDkn2s",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "upload avatar",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/users/upload-avatar",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "users",
+                                "upload-avatar"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "src": "c:\\Users\\PC\\Pictures\\KhaiTran.jpeg",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTk4Njg3LCJleHAiOjE2NzU2NDE4ODd9.IaYqAQdISiQr1C2dzgNaiRsfMZJ6j-HpjkQzIqDkn2s",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "binh luan",
+            "item": [
+                {
+                    "name": "get all cmt",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/binhluan",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "binhluan"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDc0OTgsImV4cCI6MTY3NDU1MDY5OH0.IxurmXsTISqNxmcXvJYYLhTDRZ7z41K9y4gM3GJshAA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get cmt by job id",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/binhluan/lay-binh-luan-theo-cong-viec/2",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "binhluan",
+                                "lay-binh-luan-theo-cong-viec",
+                                "2"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ3MzU5NjQsImV4cCI6MTY3NDc3OTE2NH0.i8JqI3ndTtUrVjdu4wnC-VMmzsbnxi26B1lId5PjdQc",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "create cmt ",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/binhluan",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "binhluan"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"maCongViec\": 2,\n  \"maNguoiBinhLuan\": 3,\n  \"noiDung\": \"string\",\n  \"saoBinhLuan\": 5\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDc0OTgsImV4cCI6MTY3NDU1MDY5OH0.IxurmXsTISqNxmcXvJYYLhTDRZ7z41K9y4gM3GJshAA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "update cmt",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/binhluan",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "binhluan"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n      \"id\":3,\n      \"maCongViec\": 1,\n      \"maNguoiBinhLuan\": 1,\n      \"ngayBinhLuan\": \"2023-01-23T10:28:09.000Z\",\n      \"noiDung\": \"hello\",\n      \"saoBinhLuan\": 5\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDc0OTgsImV4cCI6MTY3NDU1MDY5OH0.IxurmXsTISqNxmcXvJYYLhTDRZ7z41K9y4gM3GJshAA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete cmt",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/binhluan/3",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "binhluan",
+                                "3"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzQ1MDc0OTgsImV4cCI6MTY3NDU1MDY5OH0.IxurmXsTISqNxmcXvJYYLhTDRZ7z41K9y4gM3GJshAA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "cong viec",
+            "item": [
+                {
+                    "name": "1",
+                    "item": [
+                        {
+                            "name": "get all job",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NjE2MTIyLCJleHAiOjE2NzU2NTkzMjJ9.ICgwzf5Wfghj4CcyabstR6sBX-No13rhMz6LIVm-72E",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "get job by id",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/2",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "2"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzUwNjQ4NTUsImV4cCI6MTY3NTEwODA1NX0.95J4fc9si76qL2-gXjgvZaLwu341DmvDKlK-SUexCnA",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "create job",
+                            "request": {
+                                "method": "POST",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n      \"tenCongViec\": \"test\",\n      \"danhGia\": 7,\n      \"giaTien\": 5000,\n      \"hinhAnh\": \"abc.com\",\n      \"moTa\": \"aabc\",\n      \"moTaNgan\": \"a\",\n      \"saoCongViec\": 2,\n      \"maChiTietLoai\": 1,\n      \"nguoiTao\": 2\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1MTY2NjI5LCJleHAiOjE2NzUyMDk4Mjl9.ga7Bk02JDfft5XRmZBXh0EwWcUVDCdyUO-9En7NIwgs",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "upload img",
+                            "request": {
+                                "method": "POST",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/upload-hinh-cong-viec/4",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "upload-hinh-cong-viec",
+                                        "4"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "file",
+                                            "src": "c:\\Users\\PC\\Pictures\\IMG_1162.JPG",
+                                            "type": "file"
+                                        }
+                                    ]
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NjE2MTIyLCJleHAiOjE2NzU2NTkzMjJ9.ICgwzf5Wfghj4CcyabstR6sBX-No13rhMz6LIVm-72E",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "update job",
+                            "request": {
+                                "method": "PUT",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/3",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "3"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n      \"id\":3,\n      \"tenCongViec\": \"lap trinh ai\",\n      \"danhGia\": 4,\n      \"giaTien\": 5100,\n      \"hinhAnh\": \"abc.com\",\n      \"moTa\": \"aabc\",\n      \"moTaNgan\": \"a\",\n      \"saoCongViec\": 2,\n      \"maChiTietLoai\": 1,\n      \"nguoiTao\": 2\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1MTY2NjI5LCJleHAiOjE2NzUyMDk4Mjl9.ga7Bk02JDfft5XRmZBXh0EwWcUVDCdyUO-9En7NIwgs",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "delete job",
+                            "request": {
+                                "method": "DELETE",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/4",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "4"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1MTY2NjI5LCJleHAiOjE2NzUyMDk4Mjl9.ga7Bk02JDfft5XRmZBXh0EwWcUVDCdyUO-9En7NIwgs",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "2",
+                    "item": [
+                        {
+                            "name": "get menu loai cv",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/1",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTI1MTkxLCJleHAiOjE2NzU1NjgzOTF9.MZ4lbreDxWECzLnx0TLI1mheUkhZ2YjHaUl7mjnQqGI",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "get detail by type",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/lay-chi-tiet-loai-cong-viec/1",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "lay-chi-tiet-loai-cong-viec",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTI1MTkxLCJleHAiOjE2NzU1NjgzOTF9.MZ4lbreDxWECzLnx0TLI1mheUkhZ2YjHaUl7mjnQqGI",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "get job by detail",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/lay-cong-viec-theo-chi-tiet-loai/1",
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "lay-cong-viec-theo-chi-tiet-loai",
+                                        "1"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTI1MTkxLCJleHAiOjE2NzU1NjgzOTF9.MZ4lbreDxWECzLnx0TLI1mheUkhZ2YjHaUl7mjnQqGI",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "phan trang",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "localhost:4000/fivernew/v1/congviec/phan-trang-tim-kiem?page=0&size=1",
+                                    "query": [
+                                        {
+                                            "key": "page",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "key": "size",
+                                            "value": "1"
+                                        }
+                                    ],
+                                    "variable": [],
+                                    "path": [
+                                        "fivernew",
+                                        "v1",
+                                        "congviec",
+                                        "phan-trang-tim-kiem"
+                                    ],
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "4000"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJraGFpdHJhbjFAZ21haWwuY29tIiwiaWF0IjoxNjc1NTMwODMzLCJleHAiOjE2NzU1NzQwMzN9.JKTG2_u6_V6NqcmMEbiq0_-721yix0y3p1w0KMvsJDU",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "loai cong viec",
+            "item": [
+                {
+                    "name": "get all job type",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get job type by id ",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/3",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec",
+                                "3"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "phan trang",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/phan-trang-tim-kiem?page=0&size=1",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "1"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec",
+                                "phan-trang-tim-kiem"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "create job type",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\"tenLoaiCongViec\": \"test\"}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "update job type",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\":3,\n  \"tenLoaiCongViec\": \"Engineering\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete job type",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/loai-cong-viec/4",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "loai-cong-viec",
+                                "4"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "chi tiet loai cong viec",
+            "item": [
+                {
+                    "name": "get all detail",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get detail by id ",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/3",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec",
+                                "3"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "phan trang",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/phan-trang-tim-kiem?page=0&size=1",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "1"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec",
+                                "phan-trang-tim-kiem"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "create detail",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{   \"tenChiTiet\": \"test\",\n    \"hinhAnh\": \"dec.com\",\n    \"maLoaiCongViec\": 2}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "update detail",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{ \"id\":4,\n  \"tenChiTiet\": \"engineering\",\n    \"hinhAnh\": \"dec.com\",\n    \"maLoaiCongViec\": 3\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete detail",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/chi-tiet-loai-cong-viec/6",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "chi-tiet-loai-cong-viec",
+                                "6"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "thue cong viec",
+            "item": [
+                {
+                    "name": "get all hires",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "get hired job by id ",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/3",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec",
+                                "3"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "phan trang",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/phan-trang-tim-kiem?page=0&size=1",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "1"
+                                }
+                            ],
+                            "variable": [],
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec",
+                                "phan-trang-tim-kiem"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "create hired job",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{     \"id\":6,\n      \"maCongViec\": 3,\n    \"maNguoiThue\": 1,\n    \"hoanThanh\": true\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "hired job done",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/hoan-thanh-cong-viec/2",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec",
+                                "hoan-thanh-cong-viec",
+                                "2"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY3MzUzNzYsImV4cCI6MTY3Njc3ODU3Nn0.Q8SdQdvG-84tTZrE5rUJ-6NAQSZzPIXmHAdhQM2sTSA",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "update hired job",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"id\":6,\n      \"maCongViec\": 3,\n    \"maNguoiThue\": 1,\n    \"hoanThanh\": false\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "delete hired job",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "localhost:4000/fivernew/v1/thue-cong-viec/6",
+                            "path": [
+                                "fivernew",
+                                "v1",
+                                "thue-cong-viec",
+                                "6"
+                            ],
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJraGFpdHJhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzY2MzM1NDQsImV4cCI6MTY3NjY3Njc0NH0.9IvHo6_uPXENadx727YLu9Ln2GhBHaYdG4h-OWHwFdk",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "test",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:4000/fivernew/v1/test/1",
+                    "path": [
+                        "fivernew",
+                        "v1",
+                        "test",
+                        "1"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000"
+                }
+            }
+        }
+    ]
+}
