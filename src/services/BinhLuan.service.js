@@ -1,5 +1,5 @@
 const {AppError} = require('../helpers/error');
-const {BinhLuan, NguoiDung} = require('../models')
+const {BinhLuan, NguoiDung, CongViec} = require('../models')
 
 const getAllBinhLuan = async() =>{
     try {
@@ -12,6 +12,14 @@ const getAllBinhLuan = async() =>{
 }
 const createBinhLuan = async(data)=>{
     try {
+        const job = await CongViec.findOne({
+            where:{
+                id:data.maCongViec
+            }
+        })
+        if(!job){
+            throw new AppError(404,"job not found")
+        }
         const user = await NguoiDung.findOne({
             where:{
                 id:data.maNguoiBinhLuan
@@ -28,6 +36,11 @@ const createBinhLuan = async(data)=>{
 }
 const updateBinhLuan = async(requester,data)=>{
     try {
+        const job = await CongViec.findOne({
+            where:{
+                id:data.maCongViec
+            }
+        })
         const requesterFound = await NguoiDung.findOne({
             where:{
                 id:requester.id
@@ -38,6 +51,9 @@ const updateBinhLuan = async(requester,data)=>{
                 id:data.id
             }
         })
+        if(!job){
+            throw new AppError(404,"job not found")
+        }
         if(!requesterFound){
             throw new AppError(404,"user not found")
         }

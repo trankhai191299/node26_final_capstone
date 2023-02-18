@@ -1,5 +1,5 @@
 const {AppError} = require('../helpers/error');
-const { ThueCongViec } = require('../models');
+const { ThueCongViec,NguoiDung,CongViec } = require('../models');
 
 const getAllHires = async()=>{
     try {
@@ -11,13 +11,21 @@ const getAllHires = async()=>{
 }
 const createHiredJob = async(data)=>{
     try {
-        const hiredJob = await ThueCongViec.findOne({
+        const job = await CongViec.findOne({
             where:{
-                id:data.id
+                id:data.maCongViec
             }
         })
-        if(hiredJob){
-            throw new AppError(401,'hired-job existed')
+        if(!job){
+            throw new AppError(404,"job not found")
+        }
+        const user = await NguoiDung.findOne({
+            where:{
+                id:data.maNguoiThue
+            }
+        })
+        if(!user){
+            throw new AppError(404,"user not found")
         }
         const createdHiredJob = await ThueCongViec.create(data)
         return createdHiredJob
@@ -42,6 +50,22 @@ const getHiredJobbyId = async(hiredId)=>{
 }
 const updateHiredJob = async(data)=>{
     try {
+        const job = await CongViec.findOne({
+            where:{
+                id:data.maCongViec
+            }
+        })
+        if(!job){
+            throw new AppError(404,"job not found")
+        }
+        const user = await NguoiDung.findOne({
+            where:{
+                id:data.maNguoiThue
+            }
+        })
+        if(!user){
+            throw new AppError(404,"user not found")
+        }
         const hiredJob = await ThueCongViec.findOne({
             where:{
                 id:data.id
@@ -50,6 +74,7 @@ const updateHiredJob = async(data)=>{
         if(!hiredJob){
             throw new AppError(404,'hired-job not found')
         }
+        
         await hiredJob.update(data)
         await hiredJob.save()
         return hiredJob

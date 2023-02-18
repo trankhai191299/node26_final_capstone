@@ -1392,7 +1392,7 @@
                                     "language": "json"
                                 }
                             },
-                            "raw": "{     \"id\":6,\n      \"maCongViec\": 3,\n    \"maNguoiThue\": 1,\n    \"hoanThanh\": true\n}"
+                            "raw": "{      \"maCongViec\": 3,\n    \"maNguoiThue\": 1,\n    \"hoanThanh\": true\n}"
                         },
                         "auth": {
                             "type": "bearer",
