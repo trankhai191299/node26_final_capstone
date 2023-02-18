@@ -1,5 +1,5 @@
 const {AppError} = require('../helpers/error');
-const { ChiTietLoaiCongViec } = require('../models');
+const { ChiTietLoaiCongViec,LoaiCongViec } = require('../models');
 
 const getAllDetails = async()=>{
     try {
@@ -18,6 +18,14 @@ const createDetail = async(data)=>{
         })
         if(detail){
             throw new AppError(401,'detail-job existed')
+        }
+        const jobType = await LoaiCongViec.findOne({
+            where:{
+                id:data.maLoaiCongViec
+            }
+        })
+        if(!jobType){
+            throw new AppError(404,'job-type not found')
         }
         const createdDetailJob = await ChiTietLoaiCongViec.create(data)
         return createdDetailJob
@@ -49,6 +57,14 @@ const updateDetail = async(data)=>{
         })
         if(!detail){
             throw new AppError(404,'detail-job not found')
+        }
+        const jobType = await LoaiCongViec.findOne({
+            where:{
+                id:data.maLoaiCongViec
+            }
+        })
+        if(!jobType){
+            throw new AppError(404,'job-type not found')
         }
         await detail.update(data)
         await detail.save()

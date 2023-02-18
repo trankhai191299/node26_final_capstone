@@ -15,7 +15,8 @@ const createCv = () =>{
     return async(req,res,next)=>{
         try {
             const data = req.body
-            const listCv = await jobService.createCv(data)
+            const {user} = res.locals
+            const listCv = await jobService.createCv(user,data)
             res.status(200).json(response(listCv))
         } catch (error) {
             next(error)

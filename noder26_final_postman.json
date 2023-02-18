@@ -600,7 +600,7 @@
                                             "language": "json"
                                         }
                                     },
-                                    "raw": "{\n      \"tenCongViec\": \"test\",\n      \"danhGia\": 7,\n      \"giaTien\": 5000,\n      \"hinhAnh\": \"abc.com\",\n      \"moTa\": \"aabc\",\n      \"moTaNgan\": \"a\",\n      \"saoCongViec\": 2,\n      \"maChiTietLoai\": 1,\n      \"nguoiTao\": 2\n}"
+                                    "raw": "{\n      \"tenCongViec\": \"test\",\n      \"danhGia\": 7,\n      \"giaTien\": 5000,\n      \"hinhAnh\": \"abc.com\",\n      \"moTa\": \"aabc\",\n      \"moTaNgan\": \"a\",\n      \"saoCongViec\": 2,\n      \"maChiTietLoai\": 1,\n}"
                                 },
                                 "auth": {
                                     "type": "bearer",

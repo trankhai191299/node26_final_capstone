@@ -9,12 +9,20 @@ const getAllCv = async()=>{
         throw error
     }
 }
-const createCv = async(data)=>{
+const createCv = async(user,data)=>{
     try {
-        const createdCv = await CongViec.create(data)
+        const detail = await ChiTietLoaiCongViec.findOne({
+            where:{
+                id:data.maChiTietLoai
+            }
+        })
+        if(!detail){
+            throw new AppError(404,'detail-job not found')
+        }
+        const newData = {...data,nguoiTao:user.id}
+        const createdCv = await CongViec.create(newData)
         return createdCv
     } catch (error) {
-        // console.log(error);
         throw error
     }
 }
