@@ -51,10 +51,18 @@ const updateBinhLuan = async(requester,data)=>{
                 id:data.id
             }
         })
+        const user = await NguoiDung.findOne({
+            where:{
+                id:data.maNguoiBinhLuan
+            }
+        })
         if(!job){
             throw new AppError(404,"job not found")
         }
         if(!requesterFound){
+            throw new AppError(404,"user not found")
+        }
+        if(!user){
             throw new AppError(404,"user not found")
         }
         if(!cmt){

@@ -36,8 +36,9 @@ const getHiredJobbyId = () =>{
 const updateHiredJob = () =>{
     return async(req,res,next)=>{
         try {
+            const {user} = res.locals
             const data = req.body
-            const updatedHiredJob = await thueCongViecService.updateHiredJob(data)
+            const updatedHiredJob = await thueCongViecService.updateHiredJob(user,data)
             res.status(200).json(response(updatedHiredJob))
         } catch (error) {
             next(error)

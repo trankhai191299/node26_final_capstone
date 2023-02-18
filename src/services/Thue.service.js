@@ -48,7 +48,7 @@ const getHiredJobbyId = async(hiredId)=>{
         throw error
     }
 }
-const updateHiredJob = async(data)=>{
+const updateHiredJob = async(requester,data)=>{
     try {
         const job = await CongViec.findOne({
             where:{
@@ -74,7 +74,17 @@ const updateHiredJob = async(data)=>{
         if(!hiredJob){
             throw new AppError(404,'hired-job not found')
         }
-        
+        const requesterFound = await NguoiDung.findOne({
+            where:{
+                id:requester.id
+            }
+        })
+        if(!requesterFound){
+            throw new AppError(404,"user not found")
+        }
+        if(requester.id !== data.maNguoiThue){
+            throw new AppError(403,"No Permission")
+        }
         await hiredJob.update(data)
         await hiredJob.save()
         return hiredJob
